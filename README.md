@@ -1,1 +1,1 @@
-# multiple_integration
+Program that calculate multiple integral
