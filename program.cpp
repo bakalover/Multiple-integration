@@ -100,8 +100,8 @@ int main()
             struct point check_point = (struct point){.x = (i/200), .y = (j/200)};
             struct point inf_point = (struct point){.x = 100, .y = 50};
             if(check_crossing_internal(arr,check_point,inf_point)%2==1){
-                I += func(check_point)*(0.000025);
-                //I += 1*(0.0001);
+                // I += func(check_point)*(0.000012);
+                I += 1*(0.000025);
             }
         }
         
