@@ -47,7 +47,7 @@ int main()
     }
     for (int32_t PARTITION = 1; PARTITION < 400; PARTITION++)
     {
-    cout<<calculate_integral(func,PARTITION,arr)<<endl;
+    cout<<((double)11223 - calculate_integral(func,PARTITION,arr))/(double)11223<<endl;
     }
     return 0;
 }

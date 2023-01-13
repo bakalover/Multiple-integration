@@ -10,7 +10,7 @@ using namespace std;
 //Borders of Area
 const int32_t LEFT_BORDER_X = -13;
 const int32_t RIGHT_BORDER_X = -5;
-const int32_t LEFT_BORDER_Y = 32;
+const int32_t LEFT_BORDER_Y = 21;
 const int32_t RIGHT_BORDER_Y = 94;
 
 //Structure describing point
