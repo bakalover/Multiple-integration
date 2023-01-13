@@ -1,7 +1,8 @@
 #include "../include/util.h"
+#include <cmath>
 
 double func(struct point point){
-    return point.x*point.x*point.x+point.y*point.y*point.y+point.x;
+    return pow(point.x,3)+pow(point.y,3) + point.x;
 }
 
 double area (struct point a, struct point b, struct point c) {
@@ -40,4 +41,19 @@ int32_t check_crossing_internal(vector<struct point> &arr, struct point point_1,
         }
     }
     return count;
+}
+double calculate_integral(double (*func)(struct point) ,int32_t PARTITION,vector<struct point>& arr){
+    double I=0;
+    for (int32_t i = LEFT_BORDER_X * PARTITION; i <= RIGHT_BORDER_X * PARTITION; i++)
+    {
+        for (int32_t j = LEFT_BORDER_X * PARTITION; j <= RIGHT_BORDER_Y * PARTITION; j++)
+        {
+            struct point check_point = (struct point){.x = ((double)i/PARTITION), .y = ((double)j/PARTITION)};
+            struct point inf_point = (struct point){.x = (double)100, .y = (double)50};
+            if(check_crossing_internal(arr,check_point,inf_point)%2==1){
+                I += func(check_point)*((double)1/(pow(PARTITION,2)));
+            }
+        }
+    }
+    return I;
 }

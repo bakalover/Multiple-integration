@@ -1,0 +1,7 @@
+#define ENTER_MSG "Please, draw a polygon by entering point coordinats. Be sure that first and last point - same"
+#define REQUEST_MSG "Enter number of points: "
+#define VALID_ERROR_MSG "Please, enter a valid number!"
+#define DOTS_FORMAT_MSG "\nEnter points in format: \nx1 y1\nx2 y2\n.\n.\n.\n------------------------"
+#define CROSSING_MSG "Crossing! Repeat point:"
+#define CLOSE_MSG "Polygonal chain is not closed! Repeat point:"
+#define VALUE_MSG "Integral value: "
