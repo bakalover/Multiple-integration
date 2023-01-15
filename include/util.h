@@ -5,7 +5,7 @@
 using namespace std;
 
 //Partition of each dimension
-const int32_t PARITION = 400;
+const int32_t PARTITION = 400;
 
 //Borders of Area
 const int32_t LEFT_BORDER_X = -13;
