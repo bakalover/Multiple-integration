@@ -31,7 +31,12 @@ int main()
     {
         while(true){
             cin>>x>>y;
-            if(arr.size()>=2&&check_crossing_new(arr,(struct point){.x=x,.y=y})){
+            struct point point = (struct point){.x=x,.y=y};
+            if(!check_border(point)){
+                cout<<BORDER_MSG<<endl;
+                continue;
+            }
+            if(arr.size()>=2&&check_crossing_new(arr,point)){
                 cout<<CROSSING_MSG<<endl;
                 continue;
             }
@@ -40,7 +45,7 @@ int main()
                 continue;
             }
             else{
-                arr.push_back((struct point){.x=x,.y=y});
+                arr.push_back(point);
                 break;
             }
         }

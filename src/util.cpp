@@ -57,3 +57,7 @@ double calculate_integral(double (*func)(struct point) ,int32_t PARTITION,vector
     }
     return I;
 }
+
+bool check_border(struct point point){
+    return point.x>=LEFT_BORDER_X && point.x<=RIGHT_BORDER_X && point.y >= LEFT_BORDER_Y && point.y <= RIGHT_BORDER_Y;
+}
