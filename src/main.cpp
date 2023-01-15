@@ -57,7 +57,7 @@ int main()
     // {
     // cout<<((double)73150 - calculate_integral(func,PARTITION,arr))/(double)73150<<endl;
     // }
-    int32_t PARTITION = 300;
+    //int32_t PARTITION = 300;
     double (*fu)(struct point) = ed;
     cout<<(calculate_integral(func,PARTITION,arr))<<endl;
     return 0;
