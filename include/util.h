@@ -18,7 +18,7 @@ struct point{
     double x,y;
 };
 
-//Calculating integral by giving function, edges of area(to validate using Jordan Theorem) and partition
+//Calculating integral by giving function, edges of area (Using Jordan Theorem to validate) and partition
 double calculate_integral(double (*func)(struct point) ,int32_t PARTITION, vector<struct point>& arr);
 
 //Just R->R function

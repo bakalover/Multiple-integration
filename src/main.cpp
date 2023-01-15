@@ -1,6 +1,9 @@
 #include "../include/util.h"
 #include "../include/messages.h"
 #include <cmath>
+double ed(struct point point){
+        return 1;
+    }
 int main()
 {
     ios_base::sync_with_stdio(0);
@@ -50,14 +53,26 @@ int main()
             }
         }
     }
-    for (int32_t PARTITION = 1; PARTITION < 400; PARTITION++)
-    {
-    cout<<((double)11223 - calculate_integral(func,PARTITION,arr))/(double)11223<<endl;
-    }
+    // for (int32_t PARTITION = 50; PARTITION < 250; PARTITION++)
+    // {
+    // cout<<((double)73150 - calculate_integral(func,PARTITION,arr))/(double)73150<<endl;
+    // }
+    int32_t PARTITION = 300;
+    double (*fu)(struct point) = ed;
+    cout<<(calculate_integral(func,PARTITION,arr))<<endl;
     return 0;
 }
+
 // -5 22
 // -6 22
 // -6 23
 // -5 23
 // -5 22
+
+// -7 25
+// -8 26
+// -8 27
+// -7 28
+// -6 27
+// -6 26
+// -7 25
