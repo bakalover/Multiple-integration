@@ -42,8 +42,8 @@ int32_t check_crossing_internal(vector<struct point> &arr, struct point point_1,
     }
     return count;
 }
-double calculate_integral(double (*func)(struct point) ,int32_t PARTITION,vector<struct point>& arr){
-    double I=0;
+double calculate_S(int32_t PARTITION,vector<struct point>& arr){
+    double S=0;
     for (int32_t i = LEFT_BORDER_X * PARTITION; i <= RIGHT_BORDER_X * PARTITION; i++)
     {
         for (int32_t j = LEFT_BORDER_Y * PARTITION; j <= RIGHT_BORDER_Y * PARTITION; j++)
@@ -51,11 +51,27 @@ double calculate_integral(double (*func)(struct point) ,int32_t PARTITION,vector
             struct point check_point = (struct point){.x = ((double)i/PARTITION), .y = ((double)j/PARTITION)};
             struct point inf_point = (struct point){.x = (double)1000000, .y = (double)100000000};
             if(check_crossing_internal(arr,check_point,inf_point)%2==1){
-                I += func(check_point)*((double)1/(pow(PARTITION,2)));
+                S += 1*((double)1/(pow(PARTITION,2)));
             }
         }
     }
-    return I;
+    return S;
+}
+
+double calculate_integral(double (*func)(struct point point),double S,int32_t N, vector<struct point>& arr,vector<double> &pts){
+    double I = 0;
+    double kor = 0;
+    struct point inf_point = (struct point){.x = (double)1000000, .y = (double)100000000};
+    for (size_t i = 0; i < N; i++)
+    {
+        struct point pt = (struct point){.x=(((double)rand()/(double)RAND_MAX) * (double)8)-(double)13 , .y = (((double)rand()/(double)RAND_MAX) * (double)73)+(double)21 };
+        if(check_crossing_internal(arr,pt,inf_point)%2==1){
+                pts.push_back(func(pt));
+                I += func(pt);
+                kor += 1;
+        }
+    }
+    return ((I*S)/(double)N) * S / ((kor*S)/(double)N); // magic constants :)
 }
 
 bool check_border(struct point point){

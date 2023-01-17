@@ -18,8 +18,11 @@ struct point{
     double x,y;
 };
 
-//Calculating integral by giving function, edges of area (Using Jordan Theorem to validate) and partition
-double calculate_integral(double (*func)(struct point) ,int32_t PARTITION, vector<struct point>& arr);
+//Calculating integral by Monte Carlo method
+double calculate_integral(double (*func)(struct point point),double S,int32_t N, vector<struct point>& arr, vector<double> &pts);
+
+//Calculating S by given edges of area (Using Jordan Theorem to validate) and partition
+double calculate_S(int32_t PARTITION, vector<struct point>& arr);
 
 //Just R->R function
 double func(struct point point);
