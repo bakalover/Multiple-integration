@@ -8,6 +8,9 @@ X - axis: Number of points<br>
 ![image](https://user-images.githubusercontent.com/105585491/212934986-7d9ef1e6-d31c-46ba-9086-22dc6339d474.png)
 <br>
 <br> !!! Value of integral has standard distribution<br><br>
+Straight calculation:<br>
+![image](https://user-images.githubusercontent.com/105585491/212937259-b9c4e831-8047-4b5f-9286-a40691850df2.png)
+<br>
 Start:
 <ul>
     <li> switch to project folder </li>
